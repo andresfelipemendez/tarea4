@@ -7,13 +7,16 @@ from PySide6 import QtCore, QtWidgets, QtGui
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        self.button = QtWidgets.QPushButton("Click me!")
+        self.authors = QtWidgets.QLabel("Estudiantes Andres Felipe Mendez, Jeisson Steward Comba Ortega y Juan David Cárdenas Mesa")
+
         self.nameLabel = QtWidgets.QLabel("Ingresar su nombre")
         self.nameInput = QtWidgets.QLineEdit("")
         self.ageLabel = QtWidgets.QLabel("Ingresar su edad")
         self.ageInput = QtWidgets.QLineEdit("")
         self.text = QtWidgets.QLabel("")
         self.layout = QtWidgets.QVBoxLayout(self)
+
+
         self.layout.addWidget(self.nameLabel)
         self.layout.addWidget(self.nameInput)
         self.layout.addWidget(self.ageLabel)
@@ -50,6 +53,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout.addWidget(self.imageLabel, QtCore.Qt.AlignHCenter)
         self.layout.addWidget(self.text,QtCore.Qt.AlignHCenter)
         self.text.setText("puede votar")
+        self.layout.addWidget(self.authors)
 
     def cantVoteLabel(self):
         self.greenCheck = QtGui.QImage("xmark.png")
@@ -58,6 +62,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout.addWidget(self.imageLabel, QtCore.Qt.AlignHCenter)
         self.layout.addWidget(self.text, QtCore.Qt.AlignHCenter)
         self.text.setText("no puede votar")
+        self.layout.addWidget(self.authors)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
